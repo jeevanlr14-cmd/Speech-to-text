@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Speech To Text</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+
+<body>
+
+    <div class="wave"></div>
+
+    <div class="dots"></div>
+
+    <div class="container">
+
+        <h1>🎤 Speech to Text</h1>
+
+        <p id="status"
+           class="status">
+            Ready to record...
+        </p>
+
+        <label for="language-select">
+    Select Language
+</label>
+
+<select id="language-select">
+
+    <option value="en-US">English</option>
+
+    <option value="kn-IN">Kannada</option>
+
+    <option value="hi-IN">Hindi</option>
+
+    <option value="ta-IN">Tamil</option>
+
+    <option value="te-IN">Telugu</option>
+
+    <option value="ml-IN">Malayalam</option>
+
+</select>
+
+    
+
+        <div class="button-group">
+            
+
+            <button id="start-btn">
+                ▶ Start Recording
+            </button>
+
+            <button id="stop-btn">
+                ⏹ Stop Recording
+            </button>
+
+            <button id="speak-btn">
+                🔊 Speak Text
+            </button>
+
+            <button id="save-btn">
+                💾 Save Transcript
+            </button>
+
+            <button id="pdf-btn">
+                📄 Download PDF
+            </button>
+
+            <button id="stop-speak-btn">
+                ⏹ Stop Voice
+            </button>
+
+        </div>
+
+        <textarea
+            id="output"
+            placeholder="Your speech will appear here...">
+        </textarea>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

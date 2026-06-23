@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    
+    font-family: 'Noto Sans Kannada', sans-serif;
+
+
+    font-family: 'Poppins', sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #38bdf8, transparent 30%),
+        radial-gradient(circle at bottom right, #a855f7, transparent 30%),
+        linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+
+}
+
+/* Animated Gradient Background */
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating Glow Effects */
+
+body::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: rgba(255,255,255,0.15);
+
+    border-radius: 50%;
+
+    top: -150px;
+    left: -150px;
+
+    
+}
+
+body::after {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    background: rgba(255,255,255,0.12);
+
+    border-radius: 50%;
+
+    bottom: -150px;
+    right: -150px;
+
+    
+}
+
+select {
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+    font-size: 16px;
+
+    background: rgba(255,255,255,0.2);
+
+    color: white;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+select option {
+    color: black;
+}
+
+
+.wave {
+    position: absolute;
+
+    width: 120%;
+
+    height: 200px;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(255,255,255,0.15);
+
+    bottom: -120px;
+
+    left: -10%;
+
+    transform: rotate(-5deg);
+}
+
+
+.dots {
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    background-image: radial-gradient(
+        rgba(255,255,255,0.5) 2px,
+        transparent 2px
+    );
+
+    background-size: 18px 18px;
+
+    top: 40px;
+    left: 40px;
+}
+
+/* Main Container */
+
+.container {
+
+    position: relative;
+    z-index: 1;
+
+    width: 700px;
+
+    padding: 45px;
+
+    border-radius: 30px;
+
+    /* DARK GLASS EFFECT */
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.35);
+
+    text-align: center;
+
+    overflow: hidden;
+
+    .container::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.12),
+        rgba(255,255,255,0.02)
+    );
+
+    border-radius: 30px;
+
+    z-index: -1;
+}
+}
+
+
+/* Container Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title */
+
+h1 {
+    color: white;
+
+    font-size: 3rem;
+
+    margin-bottom: 12px;
+
+    letter-spacing: 1px;
+
+    text-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+/* Status Text */
+
+.status {
+    color: #e2e8f0;
+
+    margin-bottom: 25px;
+
+    font-size: 18px;
+
+    min-height: 25px;
+}
+
+/* Button Group */
+
+.button-group {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+
+button {
+    padding: 15px 28px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+
+button:hover {
+    transform: translateY(-4px) scale(1.04);
+}
+
+/* Start Button */
+
+#start-btn {
+    background: linear-gradient(
+        135deg,
+        #22c55e,
+        #16a34a
+    );
+
+    box-shadow: 0 5px 18px rgba(34, 197, 94, 0.45);
+}
+
+/* Stop Button */
+
+#stop-btn {
+    background: linear-gradient(
+        135deg,
+        #ef4444,
+        #dc2626
+    );
+
+    box-shadow: 0 5px 18px rgba(239, 68, 68, 0.45);
+}
+
+#speak-btn {
+    background: linear-gradient(
+        135deg,
+        #f59e0b,
+        #d97706
+    );
+
+    color: white;
+
+    padding: 15px 28px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+/* Save Button */
+
+#save-btn {
+    background: linear-gradient(
+        135deg,
+        #3b82f6,
+        #2563eb
+    );
+
+    box-shadow: 0 5px 18px rgba(59, 130, 246, 0.45);
+}
+
+/* Disabled Buttons */
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#pdf-btn {
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #7c3aed
+    );
+
+    color: white;
+
+    padding: 15px 28px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    margin-top: 10px;
+
+    transition: 0.3s;
+}
+
+#pdf-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Textarea */
+
+textarea {
+    width: 100%;
+
+    height: 240px;
+
+    padding: 20px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    resize: none;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    background: rgba(255,255,255,0.15);
+
+    color: white;
+
+    outline: none;
+
+    box-shadow:
+        inset 0 0 15px rgba(255,255,255,0.08);
+}
+
+#stop-speak-btn {
+
+    background: linear-gradient(
+        135deg,
+        #ef4444,
+        #b91c1c
+    );
+
+    color: white;
+
+    padding: 15px 28px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+    margin-left: 10px;
+}
+
+#stop-speak-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px
+        rgba(239,68,68,0.4);
+}
+
+/* Placeholder */
+
+textarea::placeholder {
+    color: rgba(255,255,255,0.75);
+}
+
+/* Scrollbar */
+
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 92%;
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    textarea {
+        height: 180px;
+    }
+}
